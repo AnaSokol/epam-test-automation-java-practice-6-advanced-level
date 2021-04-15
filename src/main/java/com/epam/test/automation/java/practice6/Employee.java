@@ -16,8 +16,9 @@ public abstract class Employee {
     }
 
     public void setSalary(BigDecimal salary) {
-    	if (salary == null || salary.compareTo(BigDecimal.ZERO)<0)
+    	if (salary == null || salary.compareTo(BigDecimal.ZERO)<0) {
     		throw new IllegalArgumentException("Salary is not set or set < 0");
+    	}
         this.salary = salary;
     }
 
@@ -34,8 +35,9 @@ public abstract class Employee {
     }
     
     public BigDecimal toPay () {
-    	if (bonus == null || bonus.compareTo(BigDecimal.ZERO) < 0)
+    	if (bonus == null || bonus.compareTo(BigDecimal.ZERO) < 0) {
     		throw new IllegalArgumentException("Bonus is not set or <0");
+    	}
     	BigDecimal totalToPay = this.salary.add(this.bonus);
     	return totalToPay;	
     }
