@@ -11,12 +11,6 @@ public class SalesPerson extends Employee {
         this.percent = percent;
     }
 
-   
-    public BigDecimal getBonus() {
-        return bonus;
-    }
-
-    
     public void setBonus(BigDecimal bonus) {
     	if (bonus == null || bonus.compareTo(BigDecimal.ZERO) < 0) {
     		throw new IllegalArgumentException("Bonus cannot be a negative number");
