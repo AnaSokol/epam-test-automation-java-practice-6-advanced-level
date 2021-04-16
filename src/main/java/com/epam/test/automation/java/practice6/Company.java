@@ -22,12 +22,14 @@ public class Company {
     	return totalToPay;
 	}
 	
-	public String nameMaxSalary() {
+	 public String nameMaxSalary() {
         int iMaxSalary = 0;
-        BigDecimal maxSalary = staff[iMaxSalary].toPay();
+        BigDecimal maxSalary = staff[0].toPay();
         for (int i = 1; i < staff.length; i++) {
-            if (maxSalary.compareTo(staff[i].toPay()) < 0)
+            if (maxSalary.compareTo(staff[i].toPay()) < 0) {
+                maxSalary = staff[i].toPay();
                 iMaxSalary = i;
+            }
         }
         return staff[iMaxSalary].getName();
     }
